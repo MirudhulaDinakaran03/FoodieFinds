@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍳 FoodieFinds</h1>
+    <input type="text" id="searchInput" placeholder="Search by ingredient...">
+    <button onclick="searchRecipes()">Search</button>
+
+    <!-- Popular Ingredients Dropdown -->
+    <select id="ingredientDropdown" onchange="selectIngredient()">
+      <option value="">Popular Ingredients</option>
+      <option value="chicken">Chicken</option>
+      <option value="egg">Egg</option>
+      <option value="rice">Rice</option>
+      <option value="milk">Milk</option>
+      <option value="pasta">Pasta</option>
+      <option value="potato">Potato</option>
+      <option value="fish">Fish</option>
+    </select>
+
+    <a href="bookmarks.html" class="bookmark-link">⭐ Bookmarks</a>
+  </header>
+
+  <section id="recipe-container"></section>
+
+  <!-- Modal -->
+  <div id="recipe-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    window.onload = () => searchRecipes('chicken'); // Load default recipes
+  </script>
+</body>
+</html>
